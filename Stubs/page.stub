@@ -1,0 +1,22 @@
+<?php
+/*
+* Theme Name: %%prettyThemeName
+* Author: %%themeAuthor
+* Version: %%themeVersion
+* Text Domain: %%themeName
+* Description: Page %name% template
+*              %%themeDescription
+* Template name: %nicename%
+*/
+
+get_header();
+
+//------------MAIN CONTENT-----------------------?>
+<main itemscope="itemscope" itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
+
+	<?php the_content(); ?>
+    
+</main>
+<?php //------------END MAIN CONTENT-------------------
+
+get_footer();

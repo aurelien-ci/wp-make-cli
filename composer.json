@@ -1,0 +1,20 @@
+{
+    "name": "aurelien-ci/wp-make-cli",
+    "description": "Make blocks, pages and other templates from stubs",
+    "type": "wp-cli-package",
+    "homepage": "https://github.com/aurelien-ci/wp-make-cli",
+    "license": "MIT",
+    "authors": [
+        {
+                "name": "Aurélien @ Concept Image",
+                "email": "aurelien@concept-image.fr",
+                "homepage": "https://www.concept-image.fr/"
+            }
+        ],
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "files": [ "wp-make-cli.php" ]
+    }
+}

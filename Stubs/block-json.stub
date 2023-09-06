@@ -1,0 +1,14 @@
+{
+	"name": "acf/%name%",
+	"title": "%nicename%",
+	"category": "common",
+	"icon": "text",
+	"keywords": ["%nicename%"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "%name%.php"
+	},
+	"supports": {
+		"align": false
+	}
+}

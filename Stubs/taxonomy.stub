@@ -1,0 +1,48 @@
+<?php
+/*
+* Theme Name: %%prettyThemeName
+* Author: %%themeAuthor
+* Version: %%themeVersion
+* Text Domain: %%themeName
+* Description: Taxonomy %name% template
+*              %%themeDescription
+*/
+
+get_header();
+
+//------------MAIN CONTENT-----------------------?>
+<main itemscope="itemscope" itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
+
+	<?php 
+		$paged = get_query_var('paged', 1);
+
+		$query_object = get_queried_object();
+
+		$args = array(
+			'post_type' 	 => '<POST_TYPE>',
+			'paged' 		 => $paged,
+			'orderby ' 		 => 'date',
+			'order'			 => 'DESC',
+			'posts_per_page' => 12,
+			'tax_query'		 => array(
+				'taxonomy'		=> '%name%',
+				'field'			=> 'term_id',
+				'terms'			=> $query_object->term_id,
+			)
+		); 
+		
+		$query = new WP_Query( $args );
+
+		if(!empty($query->posts)) :
+			foreach($query->posts as $item) :
+
+				get_template_part('partials/<POST_TYPE>', 'item', array('item' => $item));
+
+			endforeach;
+		endif;
+	?>
+    
+</main>
+<?php //------------END MAIN CONTENT-------------------
+
+get_footer();

@@ -1,0 +1,41 @@
+<?php
+/*
+* Theme Name: %%prettyThemeName
+* Author: %%themeAuthor
+* Version: %%themeVersion
+* Text Domain: %%themeName
+* Description: Archive %name% template
+*              %%themeDescription
+*/
+
+get_header();
+
+//------------MAIN CONTENT-----------------------?>
+<main itemscope="itemscope" itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
+
+	<?php 
+		$paged = get_query_var('paged', 1);
+
+		$args = array(
+			'post_type' 	 => '%name%',
+			'paged' 		 => $paged,
+			'orderby ' 		 => 'date',
+			'order'			 => 'DESC',
+			'posts_per_page' => 12,
+		); 
+		
+		$query = new WP_Query( $args );
+
+		if(!empty($query->posts)) :
+			foreach($query->posts as $item) :
+
+				get_template_part('partials/%name%', 'item', array('item' => $item));
+
+			endforeach;
+		endif;
+	?>
+    
+</main>
+<?php //------------END MAIN CONTENT-------------------
+
+get_footer();
