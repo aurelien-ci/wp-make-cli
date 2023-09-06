@@ -12,4 +12,4 @@ This package is mostly inspired by Laravel built in php artisan make command.
 
 If you're using WP-CLI v0.23.0 or later, you can install this package with:
 
-`wp package install https://github.com/wp-cli/wp-make-cli.git`
+`wp package install https://gitlab.com/chantiers/wp-make-cli.git`
